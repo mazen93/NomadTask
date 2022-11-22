@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (5.6.2)
+  - Optik (0.4.0)
+  - PromisedFuture (1.0.2)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - Optik
+  - PromisedFuture
+  - SDWebImage
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Optik
+    - PromisedFuture
+    - SDWebImage
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Optik: 64066ad701b3d440bc4b3847a5f354b602e188aa
+  PromisedFuture: 15ab3542f9d9c9d62886e2228c606a3e0fd16ccd
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: b579c0073fea6288c329e4d24f8c061f17b0f96b
+
+COCOAPODS: 1.11.3
