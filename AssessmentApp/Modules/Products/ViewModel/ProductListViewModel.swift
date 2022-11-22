@@ -14,7 +14,8 @@ class ProductListViewModel: ViewModel{
     //MARK:- Variable:-
     weak var delegate: ViewModelDelegate?
     var productsList:[Product] = []
-    
+    var productBuilder: ProductBuilder?
+    var product: Product?
     func getProducts() {
         
         ProductClient.getProducts().execute {[weak self] response in
@@ -36,6 +37,17 @@ class ProductListViewModel: ViewModel{
             self?.state = .error(error)
         }
     }
+    
+    
+    func setA(){
+        guard let product = product else { return }
+        if productBuilder == nil {
+        productBuilder = ProductBuilder(product: product)
+        }
+    }
+    
+    
+    
 }
 
 

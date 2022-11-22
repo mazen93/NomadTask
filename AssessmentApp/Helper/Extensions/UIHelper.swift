@@ -66,3 +66,12 @@ struct UIHelpers {
        }
 
 }
+extension Double {
+    var clean: String {
+       return String(format: "%.2f", self)
+    }
+    
+    var remove: Double {
+        return Double(self.clean) ?? 0
+    }
+}

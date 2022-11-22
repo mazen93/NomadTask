@@ -24,6 +24,13 @@ class CartCell: UITableViewCell {
     var plusClosure: (() -> ())?
     var minusClosure: (() -> ())?
     var deleteClosure: (() -> ())?
+    
+    
+    var quantity: Int64 = 0 {
+        didSet {
+            productCount.text = "\(quantity)"
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -44,10 +51,11 @@ class CartCell: UITableViewCell {
         deleteClosure?()
     }
  
-     func configCell(model:Product){
-         productPrice.text = "\(model.retailPrice ?? 0)"
+     func configCell(model:ProductEntity){
+         productPrice.text = "\(model.price)"
          productTitle.text = model.name
-         productPhoto.setImage(url: model.imageURL ?? "")
+         productPhoto.setImage(url: model.image ?? "")
+         quantity = model.quantity
      }
     
 }

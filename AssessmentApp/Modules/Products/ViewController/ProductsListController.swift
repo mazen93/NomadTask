@@ -23,6 +23,7 @@ class ProductsListController: UIViewController {
         
         
     }
+  
     private func setupView(){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical //.horizontal
@@ -53,6 +54,17 @@ extension ProductsListController:UICollectionViewDataSource,UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCell.cellIdentifier, for: indexPath) as! ProductsCell
         cell.configCell(model: viewModel.productsList[indexPath.row])
         cell.addToCartClosure = {
+            
+            print("add")
+            var productBuilder = ProductBuilder(product: self.viewModel.productsList[indexPath.row])
+            guard productBuilder.saveProduct() else {
+                print(productBuilder.errors)
+                Alert.showAlert(viewController: self, title: "", message: "Error in save Product", action1Title:"OK")
+                return
+            }
+            
+            Alert.showAlert(viewController: self, title: "", message: "Successfully Added to your cart", action1Title:"OK")
+            
             
         }
         return cell

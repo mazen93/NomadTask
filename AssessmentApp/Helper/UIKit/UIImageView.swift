@@ -47,9 +47,9 @@ extension UIImageView {
         if let urlString = url, let url = URL(string: urlString) {
             sd_imageIndicator = SDWebImageActivityIndicator.gray
             sd_imageIndicator?.startAnimatingIndicator()
-            sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"), options: .refreshCached)
+            sd_setImage(with: url, placeholderImage: UIImage(systemName: "photo"), options: .refreshCached)
         } else {
-            image = UIImage(named: "placeholder")
+            image = UIImage(named: "photo")
         }
     }
 }
